@@ -1,0 +1,4 @@
+for goose migration use cmd:
+
+        goose mysql root:123456@/rssagg up
+
