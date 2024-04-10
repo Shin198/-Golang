@@ -4,10 +4,10 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"time"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"golang.org/x/vuln/client"
 )
 
 func DBInit() *mongo.Client {
@@ -39,11 +39,11 @@ func DBInit() *mongo.Client {
 var Client *mongo.Client = DBInit()
 
 func UserData(client *mongo.Client, collectionName string) *mongo.Collection {
-	var collection *mongo.Collection = client.Database("Ecommerce").Collection(collectionName)
-	return collection
+	var userCollection *mongo.Collection = client.Database("Ecommerce").Collection(collectionName)
+	return userCollection
 }
 
 func ProductData(client *mongo.Client, collectionName string) *mongo.Collection {
-	var productCollection *mongo.Collection = client.Database("Ecommerce").Collection(collectionName)
-	return productCollection
+	var prodCollection *mongo.Collection = client.Database("Ecommerce").Collection(collectionName)
+	return prodCollection
 }
